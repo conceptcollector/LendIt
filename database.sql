@@ -1,10 +1,20 @@
-
--- USER is a reserved keyword with Postgres
--- You must use double quotes in every query that user is in:
--- ex. SELECT * FROM "user";
--- Otherwise you will have errors!
-CREATE TABLE "user" (
-    "id" SERIAL PRIMARY KEY,
-    "username" VARCHAR (80) UNIQUE NOT NULL,
-    "password" VARCHAR (1000) NOT NULL
+CREATE TABLE users (
+	id SERIAL PRIMARY KEY,
+	username VARCHAR(255),
+	password VARCHAR(255),
+	email_address VARCHAR(255),
+	inserted_at TIMESTAMP,
+	updated_at TIMESTAMP
 );
+
+CREATE TABLE items (
+	id SERIAL PRIMARY KEY,
+	title VARCHAR(255),
+	author VARCHAR(255),
+	cover VARCHAR(255),
+	media_type VARCHAR(255),
+	comments TEXT,
+	inserted_at TIMESTAMP,
+	updated_at TIMESTAMP,
+	users_id INT
+	);
