@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-// import {useHistory} from 'react-router-dom';
+import './Home.css';
 
 function Home() {
     const dispatch = useDispatch();
@@ -13,17 +13,17 @@ function Home() {
 
 
     return (
-        <>
-        <p>You're Home</p>
         <ul>
             {items.map((item) => {
                 return (<li key={item.id}>
+                    <img 
+                        src={item.cover}
+                    />
                     {item.title}
                 </li>
             )})}
         </ul>
-        </>
-        )
-        }
+    )
+}
 
 export default Home;
