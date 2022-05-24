@@ -13,7 +13,7 @@ function* fetchAllItems() {
 }
 
 function* itemsSaga() {
-    yield takeLatest('FETCH_USER', fetchAllItems);
+    yield takeLatest('FETCH_ITEMS', fetchAllItems);
 }
 
 export default itemsSaga;
