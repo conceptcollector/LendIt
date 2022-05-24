@@ -17,10 +17,10 @@ function Home() {
         <p>You're Home</p>
         <ul>
             {items.map((item) => {
-                <li key={item.id}>
+                return (<li key={item.id}>
                     {item.title}
                 </li>
-            })}
+            )})}
         </ul>
         </>
         )
