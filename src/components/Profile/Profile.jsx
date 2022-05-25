@@ -1,15 +1,21 @@
-import React from 'react';
+import {useEffect} from 'react';
+import {useParams} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import Grid from '@material-ui/core/Grid';
 
 function Profile() {
-    const dispatch = useDispatch();
-    const user = useSelector((store) => store.user);
-    const items = useSelector((store) => store.items);
-
     useEffect(() => {
-        dispatch({type: 'FETCH_USER_ITEMS'});
-      }, []);
+        console.log(user);
+        dispatch({
+            type: 'FETCH_USER_ITEMS',
+            payload: params.id
+        });
+    }, []);
+    
+    const dispatch = useDispatch();
+    const user = useSelector((store) => store.user)
+    ;const params = useParams();
+    // const items = useSelector((store) => store.items);
 
     return (
         <>

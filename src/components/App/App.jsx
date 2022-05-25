@@ -17,8 +17,8 @@ import Header from '../Header/Header.jsx';
 import AboutPage from '../AboutPage/AboutPage';
 import Home from '../Home/Home';
 import InfoPage from '../InfoPage/InfoPage';
-import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
+import Profile from '../Profile/Profile';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import UserPage from '../UserPage/UserPage';
 
@@ -70,6 +70,13 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
+            exact
+            path="/profile"
+          >
+            <Profile />
+          </ProtectedRoute>
+
+          <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/info"
@@ -84,7 +91,7 @@ function App() {
             {user.id ?
               // If the user is already logged in, 
               // redirect to the /home page
-              <Redirect to="/user" />
+              <Redirect to="/home" />
               :
               // Otherwise, show the login page
               <LoginPage />
@@ -98,24 +105,10 @@ function App() {
             {user.id ?
               // If the user is already logged in, 
               // redirect them to the /user page
-              <Redirect to="/user" />
+              <Redirect to="/home" />
               :
               // Otherwise, show the registration page
               <RegisterPage />
-            }
-          </Route>
-
-          <Route
-            exact
-            path="/home"
-          >
-            {user.id ?
-              // If the user is already logged in, 
-              // redirect them to the /user page
-              <Redirect to="/user" />
-              :
-              // Otherwise, show the Landing page
-              <LandingPage />
             }
           </Route>
 
