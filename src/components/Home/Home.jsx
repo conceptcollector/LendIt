@@ -1,5 +1,6 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import Grid from '@material-ui/core/Grid';
 import './Home.css';
 
 function Home() {
@@ -13,16 +14,19 @@ function Home() {
 
 
     return (
-        <ul>
-            {items.map((item) => {
-                return (<li key={item.id}>
-                    <img 
-                        src={item.cover}
-                    />
-                    {item.title}
-                </li>
-            )})}
-        </ul>
+        <Grid container>
+                {items.map((item) => {
+                    return (
+                    <Grid item>
+                    <h3 key={item.id}>
+                        <img 
+                            src={item.cover}
+                        />
+                        {item.title}
+                    </h3>
+                    </Grid>
+                )})}
+        </Grid>
     )
 }
 
