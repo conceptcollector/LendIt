@@ -17,8 +17,8 @@ function Home() {
         <Grid container>
                 {items.map((item) => {
                     return (
-                    <Grid item>
-                    <h3 key={item.id}>
+                    <Grid item key={item.id}>
+                    <h3>
                         <img 
                             src={item.cover}
                         />
