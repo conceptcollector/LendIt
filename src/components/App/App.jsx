@@ -84,7 +84,7 @@ function App() {
             {user.id ?
               // If the user is already logged in, 
               // redirect to the /home page
-              <Redirect to="/home" />
+              <Redirect to="/user" />
               :
               // Otherwise, show the login page
               <LoginPage />
