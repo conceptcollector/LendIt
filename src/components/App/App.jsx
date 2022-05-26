@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import {useEffect} from 'react';
 import {
   HashRouter as Router,
   Redirect,
@@ -12,10 +12,9 @@ import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
-import Header from '../Header/Header.jsx';
-
 import AboutPage from '../AboutPage/AboutPage';
 import AddItem from '../AddItem/AddItem';
+import Header from '../Header/Header';
 import Home from '../Home/Home';
 import InfoPage from '../InfoPage/InfoPage';
 import LoginPage from '../LoginPage/LoginPage';
