@@ -13,7 +13,7 @@ function* fetchAllItems() {
 }
 
 function* addItem(action) {
-    console.log(action.payload);
+    console.log('This is the items.saga addItem', action.payload);
     const response = yield axios ({
         method: 'POST',
         url: '/api/items',

@@ -17,7 +17,6 @@ function AddItem() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(user.id);
         dispatch({
             type: 'ADD_ITEM',
             payload: {
