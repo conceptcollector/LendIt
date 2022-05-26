@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 
   router.post('/', (req, res) => {
     const sqlText = `
-      INSERT INTO items (title, author, cover, media_type, comments, "user_id")
+      INSERT INTO items (title, author, cover, media_type, comments, user_id)
       VALUES ($1, $2, $3, $4, $5, $6);
     `;
     const sqlValues = [
@@ -25,7 +25,7 @@ router.get('/', (req, res) => {
       req.body.cover,
       req.body.media_type,
       req.body.comments,
-      req.body.user_id
+      req.user.id
     ];
     console.log('sqlValues', sqlValues);
     pool.query(sqlText, sqlValues)

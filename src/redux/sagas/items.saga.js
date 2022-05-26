@@ -13,12 +13,16 @@ function* fetchAllItems() {
 }
 
 function* addItem(action) {
+    try {
     console.log('This is the items.saga addItem', action.payload);
-    const response = yield axios ({
+    const response = yield axios({
         method: 'POST',
         url: '/api/items',
         data: action.payload
     })
+    } catch {
+        console.log('POST route is broke AF, yo');
+    }
 }
 
 function* itemsSaga() {

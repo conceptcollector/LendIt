@@ -13,7 +13,6 @@ function AddItem() {
     const history = useHistory();
 
     const dispatch = useDispatch();
-    const user = useSelector((store) => store.user);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -24,8 +23,7 @@ function AddItem() {
                 itemAuthor,
                 itemCover,
                 itemMediaType,
-                itemComments,
-                user_id: user.id
+                itemComments
             }
         })
         history.push('/Profile');
