@@ -14,27 +14,44 @@ router.get('/', (req, res) => {
       })
   });
 
-  router.post('/', (req, res) => {
-    const sqlText = `
-      INSERT INTO items (title, author, cover, media_type, comments, user_id)
+router.post('/', (req, res) => {
+  const sqlText = `
+    INSERT INTO items (title, author, cover, media_type, comments, user_id)
       VALUES ($1, $2, $3, $4, $5, $6);
     `;
-    const sqlValues = [
-      req.body.itemTitle,
-      req.body.itemAuthor,
-      req.body.itemCover,
-      req.body.itemMediaType,
-      req.body.itemComments,
-      req.user.id
-    ];
-    pool.query(sqlText, sqlValues)
+  const sqlValues = [
+    req.body.itemTitle,
+    req.body.itemAuthor,
+    req.body.itemCover,
+    req.body.itemMediaType,
+    req.body.itemComments,
+    req.user.id
+  ];
+  pool.query(sqlText, sqlValues)
     .then((dbRes) => {
-      res.sendStatus(201);
-    })
-    .catch((dbErr) => {
-      console.log('INSERT database error', dbErr);
-      res.sendStatus(500);
-    });
+    res.sendStatus(201);
   })
+  .catch((dbErr) => {
+    console.log('INSERT database error', dbErr);
+    res.sendStatus(500);
+  });
+})
+
+router.delete('/:id', (req, res) => {
+  const sqlText = `
+    DELETE FROM items
+      WHERE id=$1;
+    `;
+  const sqlValues = [req.params.id];
+
+  pool.query(sqlText, sqlValues)
+  .then((dbRes) => {
+    res.sendStatus(200);
+  })
+  .catch((dbErr) => {
+    console.error('DELETE database error', dbErr)
+    res.sendStatus(500);
+  })
+})
 
   module.exports = router;

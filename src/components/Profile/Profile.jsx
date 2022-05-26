@@ -32,12 +32,24 @@ function Profile() {
                 {items.map((item) => {
                     return (
                     <Grid item key={item.id}>
-                    <h3>
                         <img 
                             src={item.cover}
                         />
-                        {item.title}
-                    </h3>
+                    
+                        <h3>
+                            {item.title}
+                        </h3>
+                        <button>Edit</button>
+                        <button
+                            onClick={() => {
+                                dispatch({
+                                    type: 'DELETE_ITEM',
+                                    payload: item.id
+                                })
+                            }}
+                        >
+                            Delete
+                        </button>
                     </Grid>
                 )})}
             </Grid>
