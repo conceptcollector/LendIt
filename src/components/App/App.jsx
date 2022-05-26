@@ -15,6 +15,7 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import Header from '../Header/Header.jsx';
 
 import AboutPage from '../AboutPage/AboutPage';
+import AddItem from '../AddItem/AddItem';
 import Home from '../Home/Home';
 import InfoPage from '../InfoPage/InfoPage';
 import LoginPage from '../LoginPage/LoginPage';
@@ -74,6 +75,13 @@ function App() {
             path="/profile"
           >
             <Profile />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/addItem"
+          >
+            <AddItem />
           </ProtectedRoute>
 
           <ProtectedRoute
