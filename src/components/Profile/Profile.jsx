@@ -8,7 +8,7 @@ function Profile() {
         console.log(user);
         dispatch({
             type: 'FETCH_USER_ITEMS',
-            payload: params.id
+            payload: user.id
         });
     }, []);
     

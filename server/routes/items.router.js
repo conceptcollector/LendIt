@@ -20,11 +20,11 @@ router.get('/', (req, res) => {
       VALUES ($1, $2, $3, $4, $5, $6);
     `;
     const sqlValues = [
-      req.body.title,
-      req.body.author,
-      req.body.cover,
-      req.body.media_type,
-      req.body.comments,
+      req.body.itemTitle,
+      req.body.itemAuthor,
+      req.body.itemCover,
+      req.body.itemMediaType,
+      req.body.itemComments,
       req.user.id
     ];
     console.log('sqlValues', sqlValues);
