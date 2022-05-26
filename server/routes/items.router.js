@@ -14,4 +14,28 @@ router.get('/', (req, res) => {
       })
   });
 
+  router.post('/', (req, res) => {
+    const sqlText = `
+      INSERT INTO items (title, author, cover, media_type, comments, user_id)
+      VALUES ($1, $2, $3, $4, $5, $6);
+    `;
+    const sqlValues = [
+      req.body.itemTitle,
+      req.body.itemAuthor,
+      req.body.itemCover,
+      req.body.itemMediaType,
+      req.body.itemComments,
+      req.user.id
+    ];
+    console.log('sqlValues', sqlValues);
+    pool.query(sqlText, sqlValues)
+    .then((dbRes) => {
+      res.sendStatus(201);
+    })
+    .catch((dbErr) => {
+      console.log('INSERT database error', dbErr);
+      res.sendStatus(500);
+    });
+  })
+
   module.exports = router;
