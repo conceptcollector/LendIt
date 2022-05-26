@@ -14,9 +14,8 @@ function Profile() {
     
     const dispatch = useDispatch();
     const user = useSelector((store) => store.user);
-    const params = useParams();
     const history = useHistory();
-    // const items = useSelector((store) => store.items);
+    const items = useSelector((store) => store.items);
 
     return (
         <>
@@ -29,6 +28,19 @@ function Profile() {
                 Add Item
             </button>
             <h2>lendIt Inventory:</h2>
+            <Grid container>
+                {items.map((item) => {
+                    return (
+                    <Grid item key={item.id}>
+                    <h3>
+                        <img 
+                            src={item.cover}
+                        />
+                        {item.title}
+                    </h3>
+                    </Grid>
+                )})}
+            </Grid>
         </>
     )
 }

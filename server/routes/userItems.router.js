@@ -6,10 +6,10 @@ const {
 } = require('../modules/authentication-middleware');
 
 
-router.get('/userItems', (req, res) => {
+router.get('/', (req, res) => {
   console.log('req.user:', req.user);
   if (req.isAuthenticated()) {
-    const sqlValues = [req.user.clearance_level];
+    const sqlValues = [req.user.id];
     const sqlQuery = `SELECT * FROM items
     WHERE user_id = $1;`
   pool

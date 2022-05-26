@@ -1,12 +1,16 @@
 import axios from 'axios';
 import {put, takeLatest} from 'redux-saga/effects';
 
-function* fetchUserItems() {
+function* fetchUserItems(action) {
     // get all items from the DB
     try {
-        const user = yield axios.get('/api/userItems');
-        console.log('get all for user:', user.data);
-        yield put({ type: 'SET_ITEMS', payload: items.data });
+        const userID = action.payload;
+        console.log('fetchUserItems userID =', userID);
+        const response = yield axios ({
+            method: 'GET',
+            url: `/api/userItems`
+        });
+        yield put({ type: 'SET_ITEMS', payload: response.data });
     } catch {
         console.log('get all error');
     }     

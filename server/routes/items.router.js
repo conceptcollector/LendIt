@@ -27,7 +27,6 @@ router.get('/', (req, res) => {
       req.body.itemComments,
       req.user.id
     ];
-    console.log('sqlValues', sqlValues);
     pool.query(sqlText, sqlValues)
     .then((dbRes) => {
       res.sendStatus(201);
