@@ -14,6 +14,7 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import AboutPage from '../AboutPage/AboutPage';
 import AddItem from '../AddItem/AddItem';
+import EditItem from '../EditItem/EditItem';
 import Header from '../Header/Header';
 import Home from '../Home/Home';
 import InfoPage from '../InfoPage/InfoPage';
@@ -81,6 +82,13 @@ function App() {
             path="/addItem"
           >
             <AddItem />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/edit/:id"
+          >
+            <EditItem />
           </ProtectedRoute>
 
           <ProtectedRoute

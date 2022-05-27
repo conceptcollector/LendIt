@@ -1,33 +1,12 @@
-import {useState} from 'react';
-import {useHistory} from 'react-router-dom';
-import {useDispatch} from 'react-redux';
+import {useEffect} from 'react';
 
-function AddItem() {
-
-    const [itemTitle, setItemTitle] = useState('');
-    const [itemAuthor, setItemAuthor] = useState('');
-    const [itemCover, setItemCover] = useState('');
-    const [itemMediaType, setItemMediaType] = useState('');
-    const [itemComments, setItemComments] = useState('');
-
-    const history = useHistory();
-
-    const dispatch = useDispatch();
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        dispatch({
-            type: 'ADD_ITEM',
-            payload: {
-                itemTitle,
-                itemAuthor,
-                itemCover,
-                itemMediaType,
-                itemComments
-            }
+function EditItem() {
+    useEffect(() => {
+        dispatchEvent({
+            type: 'FETCH_ITEM',
+            payload: item.id
         })
-        history.push('/Profile');
-    }
+    })
 
     return (
         <form
@@ -68,4 +47,4 @@ function AddItem() {
     )
 }
 
-export default AddItem;
+export default EditItem;

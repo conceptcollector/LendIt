@@ -1,5 +1,5 @@
 import {useEffect} from 'react';
-import {useParams, useHistory} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import Grid from '@material-ui/core/Grid';
 
@@ -39,7 +39,13 @@ function Profile() {
                         <h3>
                             {item.title}
                         </h3>
-                        <button>Edit</button>
+                        <button
+                            onClick={() => {
+                                history.push(`/edit/${item.id}`)
+                            }}
+                        >
+                            Edit
+                        </button>
                         <button
                             onClick={() => {
                                 dispatch({
