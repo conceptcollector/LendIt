@@ -3,7 +3,12 @@ const router = express.Router();
 const pool = require('../modules/pool')
 
 router.get('/', (req, res) => {
-  const query = `SELECT * FROM items ORDER BY inserted_at DESC;`;
+  const query = `
+  SELECT *
+    FROM items
+    ORDER BY inserted_at
+    DESC
+    LIMIT 4;`;
   pool.query(query)
     .then(result => {
       res.send(result.rows);
