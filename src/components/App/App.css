@@ -110,3 +110,16 @@ input {
   margin: 5px;
   margin-bottom: 10px;
 }
+
+li {
+  list-style-type: none;
+}
+
+img {
+  height: 50px;
+  width: auto;
+}
+
+h3 {
+  padding: 10px;
+}

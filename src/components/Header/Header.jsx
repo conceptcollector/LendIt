@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Header.css';
-import { useSelector } from 'react-redux';
+import {useSelector} from 'react-redux';
 
 function Header() {
     const user = useSelector((store) => store.user);
@@ -26,9 +26,6 @@ function Header() {
                 <>
                     <Link className="navLink" to="/home">
                         Home
-                    </Link>
-                    <Link className="navLink" to="/info">
-                        Info Page
                     </Link>
                     <Link className="navLink" to="/profile">
                         Profile    

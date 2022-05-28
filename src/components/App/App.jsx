@@ -14,9 +14,9 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import AboutPage from '../AboutPage/AboutPage';
 import AddItem from '../AddItem/AddItem';
+import EditItem from '../EditItem/EditItem';
 import Header from '../Header/Header';
 import Home from '../Home/Home';
-import InfoPage from '../InfoPage/InfoPage';
 import LoginPage from '../LoginPage/LoginPage';
 import Profile from '../Profile/Profile';
 import RegisterPage from '../RegisterPage/RegisterPage';
@@ -84,11 +84,10 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
             exact
-            path="/info"
+            path="/edit/:id"
           >
-            <InfoPage />
+            <EditItem />
           </ProtectedRoute>
 
           <Route
