@@ -41,6 +41,7 @@ function Profile() {
             >
             <input
                 placeholder='email address'
+                type="email"
                 onChange={(e) => setEmailAddress(e.target.value)}
                 value={emailAddress}
             >
