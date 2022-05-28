@@ -28,7 +28,9 @@ function* addEmailAddress(action) {
   const response = yield axios({
       method: 'POST',
       url: '/api/user',
-      data: action.payload
+      data: {
+        emailAddress: action.payload
+      }
   })
 }
 
