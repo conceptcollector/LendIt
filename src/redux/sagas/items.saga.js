@@ -12,6 +12,18 @@ function* fetchAllItems() {
     }     
 }
 
+function* fetchOneItem(action) {
+    const itemId = action.payload;
+    const response = yield axios({
+        method: 'GET',
+        url: `/api/items/${itemId}`
+    })
+    yield put({
+        type: 'SET_EDIT_ITEM',
+        payload: response.data
+    })
+}
+
 function* addItem(action) {
     const response = yield axios({
         method: 'POST',
@@ -22,6 +34,7 @@ function* addItem(action) {
 
 function* itemsSaga() {
     yield takeLatest('FETCH_ITEMS', fetchAllItems);
+    yield takeLatest('FETCH_ITEM', fetchOneItem);
     yield takeLatest('ADD_ITEM', addItem);
 }
 

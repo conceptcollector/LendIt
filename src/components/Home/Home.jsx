@@ -23,6 +23,7 @@ function Home() {
                         />
                         {item.title}
                     </h3>
+                    <button>📧</button>
                     </Grid>
                 )})}
         </Grid>

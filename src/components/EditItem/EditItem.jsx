@@ -8,7 +8,7 @@ function EditItem() {
             type: 'FETCH_ITEM',
             payload: itemId
         })
-    }, [])
+    }, [itemId])
 
     const params = useParams();
     const history = useHistory();
@@ -59,8 +59,9 @@ function EditItem() {
             >
             </input>
             <input
-                value={editItem.mediaType}
+                value={editItem.media_type}
                 onChange={(e) => {
+                    console.log('editItem.media_type', editItem.media_type);
                     dispatch({
                         type: 'EDIT_MEDIA_TYPE',
                         payload: e.target.value

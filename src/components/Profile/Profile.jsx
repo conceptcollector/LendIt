@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import Grid from '@material-ui/core/Grid';
@@ -16,6 +16,14 @@ function Profile() {
     const user = useSelector((store) => store.user);
     const history = useHistory();
     const items = useSelector((store) => store.items);
+    const [emailAddress, setEmailAddress] = useState('');
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch({
+            type: 'ADD_EMAIL_ADDRESS',
+            payload: emailAddress
+        })
+    }
 
     return (
         <>
@@ -27,6 +35,16 @@ function Profile() {
             >
                 Add Item
             </button>
+            <form
+                onSubmit={handleSubmit}
+            >
+            <input
+                placeholder='email address'
+                onChange={(e) => setEmailAddress(e.target.value)}
+                value={emailAddress}
+            >
+            </input>
+            </form>
             <h2>lendIt Inventory:</h2>
             <Grid container>
                 {items.map((item) => {

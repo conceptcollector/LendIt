@@ -16,6 +16,23 @@ function* fetchUserItems(action) {
     }     
 }
 
+function* updateItem(action) {
+    try {
+    const itemToEdit = action.payload;
+    console.log('***********************************************************************************', itemToEdit);
+    const response = yield axios({
+        method: 'POST',
+        url: `/api/items/${itemToEdit.id}`,
+        data: itemToEdit
+    })
+    yield put({
+        type: 'FETCH_ITEMS'
+    })
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 function* deleteItem(action) {
     const response = yield axios({
         method: 'DELETE',
@@ -29,6 +46,7 @@ function* deleteItem(action) {
 function* userItemsSaga() {
     yield takeLatest('FETCH_USER_ITEMS', fetchUserItems);
     yield takeLatest('DELETE_ITEM', deleteItem);
+    yield takeLatest('UPDATE_ITEM', updateItem);
 }
 
 export default userItemsSaga;

@@ -17,7 +17,6 @@ import AddItem from '../AddItem/AddItem';
 import EditItem from '../EditItem/EditItem';
 import Header from '../Header/Header';
 import Home from '../Home/Home';
-import InfoPage from '../InfoPage/InfoPage';
 import LoginPage from '../LoginPage/LoginPage';
 import Profile from '../Profile/Profile';
 import RegisterPage from '../RegisterPage/RegisterPage';
@@ -89,14 +88,6 @@ function App() {
             path="/edit/:id"
           >
             <EditItem />
-          </ProtectedRoute>
-
-          <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
-            exact
-            path="/info"
-          >
-            <InfoPage />
           </ProtectedRoute>
 
           <Route
