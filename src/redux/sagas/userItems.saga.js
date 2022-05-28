@@ -19,7 +19,6 @@ function* fetchUserItems(action) {
 function* updateItem(action) {
     try {
     const itemToEdit = action.payload;
-    console.log('***********************************************************************************', itemToEdit);
     const response = yield axios({
         method: 'POST',
         url: `/api/items/${itemToEdit.id}`,

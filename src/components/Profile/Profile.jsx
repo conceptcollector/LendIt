@@ -23,6 +23,7 @@ function Profile() {
             type: 'ADD_EMAIL_ADDRESS',
             payload: emailAddress
         })
+        setEmailAddress('');
     }
 
     return (
@@ -40,10 +41,12 @@ function Profile() {
             >
             <input
                 placeholder='email address'
+                type="email"
                 onChange={(e) => setEmailAddress(e.target.value)}
                 value={emailAddress}
             >
             </input>
+            <button>Submit</button>
             </form>
             <h2>lendIt Inventory:</h2>
             <Grid container>
