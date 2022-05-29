@@ -20,7 +20,7 @@ router.post('/', (req, res) => {
 	    SET email_address = $1
 	    WHERE id = $2;`;
   const sqlValues = [
-    req.body,
+    req.body.emailAddress,
     req.user.id
   ]
   pool.query(sqlText, sqlValues)
