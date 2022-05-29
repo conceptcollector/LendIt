@@ -6,9 +6,11 @@ router.get('/', (req, res) => {
   const query = `
   SELECT *
     FROM items
-    ORDER BY inserted_at
+    JOIN "user" ON items.user_id = "user".id
+    ORDER BY items.inserted_at
     DESC
-    LIMIT 4;`;
+    LIMIT 4
+  `;
   pool.query(query)
     .then(result => {
       res.send(result.rows);

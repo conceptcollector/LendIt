@@ -5,13 +5,11 @@ import Grid from '@material-ui/core/Grid';
 function Home() {
     const dispatch = useDispatch();
     const items = useSelector(store => store.items);
-    // const history = useHistory();
 
     useEffect(() => {
         dispatch({ type: 'FETCH_ITEMS' });
     }, []);
-
-
+    
     return (
         <Grid container>
                 {items.map((item) => {
@@ -23,7 +21,9 @@ function Home() {
                         />
                         {item.title}
                     </h3>
-                    <button>📧</button>
+                    <a
+                        href={`mailto:${item.email_address}`}
+                    >📧</a>
                     </Grid>
                 )})}
         </Grid>
