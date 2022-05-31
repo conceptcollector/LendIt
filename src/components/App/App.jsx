@@ -17,6 +17,7 @@ import AddItem from '../AddItem/AddItem';
 import EditItem from '../EditItem/EditItem';
 import Header from '../Header/Header';
 import Home from '../Home/Home';
+import ItemDetails from '../ItemDetails/ItemDetails';
 import LoginPage from '../LoginPage/LoginPage';
 import Profile from '../Profile/Profile';
 import RegisterPage from '../RegisterPage/RegisterPage';
@@ -27,7 +28,7 @@ import './App.css';
 function App() {
   const dispatch = useDispatch();
 
-  const user = useSelector(store => store.user);
+  const user = useSelector((store) => store.user);
 
   useEffect(() => {
     dispatch({ type: 'FETCH_USER' });
@@ -51,11 +52,18 @@ function App() {
           </Route>
 
           <Route
-            exact path="/home"
+            exact
+            path="/home"
           >
             <Home />
           </Route>
 
+          <Route
+            exact
+            path="/details/:id"
+          >
+            <ItemDetails />
+          </Route>
 
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
