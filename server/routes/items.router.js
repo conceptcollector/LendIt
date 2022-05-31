@@ -4,12 +4,12 @@ const pool = require('../modules/pool')
 
 router.get('/', (req, res) => {
   const query = `
-  SELECT *
+  SELECT items.id, items.title, items.author, items.cover, items.media_type, items.comments, "user".email_address
     FROM items
     JOIN "user" ON items.user_id = "user".id
     ORDER BY items.inserted_at
     DESC
-    LIMIT 4
+    LIMIT 4;
   `;
   pool.query(query)
     .then(result => {
