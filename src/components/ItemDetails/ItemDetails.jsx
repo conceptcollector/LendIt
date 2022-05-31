@@ -32,7 +32,9 @@ function ItemDetails() {
             <p>
                 {item.comments}
             </p>
-            <button>📧</button>
+            <a
+                href={`mailto:${item.email_address}`}
+            >📧</a>
         </>
     )
 }
