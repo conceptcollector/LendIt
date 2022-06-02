@@ -1,11 +1,13 @@
 import {useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import Card from '@mui/material/Card';
-import Grid from '@mui/material/Grid';
+
+import Search from '../Search/Search';
 
 import './Home.css';
-import Search from '../Search/Search';
+import {Box} from '@mui/material';
+import {Card} from '@mui/material';
+import {Grid} from '@mui/material';
 
 function Home() {
     const dispatch = useDispatch();
@@ -13,7 +15,6 @@ function Home() {
     const items = useSelector((store) => store.items);
 
     const cardStyle = {
-        display: 'block',
         width: '60vw',
         height: '5vw'
     }
@@ -25,30 +26,41 @@ function Home() {
     return (
         <>
             <Search />
-            <Grid container>
+            <Grid
+                container
+                sx={{
+                    justifyContent: 'flex-end'
+                }}
+            >
                 {items.map((item) => {
                     return (
-                        <Card style={cardStyle}>
-                            <Grid
-                                item
-                                key={item.id}
-                            >
-                                <h3
-                                    onClick={() => {
-                                        history.push(`/details/${item.id}`)
-                                    }}
+                        <Box
+                            sx={{
+                                backgroundColor: 'secondary'
+                            }}
+                        >
+                            <Card style={cardStyle}>
+                                <Grid
+                                    item
+                                    key={item.id}
                                 >
-                                    <img
-                                        src={item.cover}
-                                    />
-                                    {item.title}
-                                </h3>
-                                <a
-                                    href={`mailto:${item.email_address}`}
-                                >📧</a>
-                            </Grid>
-                        </Card>
-                )})}
+                                    <h3
+                                        onClick={() => {
+                                            history.push(`/details/${item.id}`)
+                                        }}
+                                    >
+                                        <img
+                                            src={item.cover}
+                                        />
+                                        {item.title}
+                                    </h3>
+                                    <a
+                                        href={`mailto:${item.email_address}`}
+                                    >📧</a>
+                                </Grid>
+                            </Card>
+                        </Box>
+                    )})}
             </Grid>
         </>
     )
