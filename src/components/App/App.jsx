@@ -18,7 +18,6 @@ import LoginPage from '../LoginPage/LoginPage';
 import Profile from '../Profile/Profile';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import UserPage from '../UserPage/UserPage';
 
 import './App.css';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
@@ -79,13 +78,6 @@ function App() {
               Visiting localhost:3000/user will show the UserPage if the user is logged in.
               If the user is not logged in, the ProtectedRoute will show the LoginPage (component).
               Even though it seems like they are different pages, the user is always on localhost:3000/user */}
-            <ProtectedRoute
-              // logged in shows UserPage else shows LoginPage
-              exact
-              path="/user"
-            >
-              <UserPage />
-            </ProtectedRoute>
 
             <ProtectedRoute
               exact

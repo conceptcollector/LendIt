@@ -3,6 +3,8 @@ import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import Grid from '@material-ui/core/Grid';
 
+import './Profile.css';
+
 function Profile() {
     useEffect(() => {
         console.log(user);
