@@ -3,6 +3,7 @@ import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import Grid from '@mui/material/Grid';
 
+import './Home.css';
 import Search from '../Search/Search';
 
 function Home() {

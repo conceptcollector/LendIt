@@ -2,6 +2,8 @@ import {useEffect} from 'react';
 import {useParams, useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 
+import './ItemDetails.css';
+
 function ItemDetails() {
     useEffect(() => {
         dispatch({

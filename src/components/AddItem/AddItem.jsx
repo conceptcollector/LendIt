@@ -2,6 +2,8 @@ import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 
+import './AddItem.css';
+
 function AddItem() {
 
     const [itemTitle, setItemTitle] = useState('');
