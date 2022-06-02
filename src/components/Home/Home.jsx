@@ -1,6 +1,7 @@
 import {useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
+import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
 
 import './Home.css';
@@ -11,36 +12,44 @@ function Home() {
     const history = useHistory();
     const items = useSelector((store) => store.items);
 
+    const cardStyle = {
+        display: 'block',
+        width: '60vw',
+        height: '15vw'
+    }
+
     useEffect(() => {
         dispatch({ type: 'FETCH_ITEMS' });
     }, []);
     
     return (
         <>
-        <Search />
-        <Grid container>
+            <Search />
+            <Grid container>
                 {items.map((item) => {
                     return (
-                    <Grid
-                        item
-                        key={item.id}
-                    >
-                    <h3
-                        onClick={() => {
-                            history.push(`/details/${item.id}`)
-                        }}
-                    >
-                        <img
-                            src={item.cover}
-                        />
-                        {item.title}
-                    </h3>
-                    <a
-                        href={`mailto:${item.email_address}`}
-                    >📧</a>
-                    </Grid>
+                        <Card style={cardStyle}>
+                            <Grid
+                                item
+                                key={item.id}
+                            >
+                                <h3
+                                    onClick={() => {
+                                        history.push(`/details/${item.id}`)
+                                    }}
+                                >
+                                    <img
+                                        src={item.cover}
+                                    />
+                                    {item.title}
+                                </h3>
+                                <a
+                                    href={`mailto:${item.email_address}`}
+                                >📧</a>
+                            </Grid>
+                        </Card>
                 )})}
-        </Grid>
+            </Grid>
         </>
     )
 }

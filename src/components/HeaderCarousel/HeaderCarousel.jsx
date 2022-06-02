@@ -4,21 +4,30 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Carousel} from 'react-bootstrap';
 
 function HeaderCarousel() {
-    const dispatch = useDispatch();
-    const covers = useSelector((store) => store.covers);
-
     useEffect(() => {
         dispatch({ type: 'FETCH_COVERS' });
     }, []);
 
+    const dispatch = useDispatch();
+    const covers = useSelector((store) => store.covers);
+
+    const carouselStyle = {
+        controls: false,
+        indicators: false
+    }
+
     return (
         <>
-            <Carousel>
+            <Carousel
+                controls={false}
+                indicators={false}
+            >
                 {covers &&
                 covers.map((cover) => {
-                    console.log('*************************************************************************', cover);
                     return (
-                        <Carousel.Item>
+                        <Carousel.Item
+                            style={carouselStyle}
+                        >
                             <img src={cover.src} key={cover.id} />
                         </Carousel.Item>
                     )

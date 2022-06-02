@@ -1,7 +1,7 @@
 .nav {
   /* flex box layout */
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   align-items: center;
 
   margin: 0 0 30px;
@@ -39,4 +39,9 @@
 
 .navLink:hover {
   background-color: #76594a;
+}
+
+.header-carousel {
+  padding: 20px;
+  width: 8vw;
 }

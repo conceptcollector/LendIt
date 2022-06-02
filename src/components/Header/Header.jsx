@@ -10,9 +10,6 @@ function Header() {
 
     return (
         <div className="nav">
-            <Link to="/home">
-                <h1 className="nav-title">lendIt</h1>
-            </Link>
             <div>
         {/* If no user is logged in, show these links */}
         {!user.id && (
@@ -24,18 +21,15 @@ function Header() {
 
         {/* If a user is logged in, show these links */}
             {user.id && (
-                // <>
-                //     <Link className="navLink" to="/home">
-                //         Home
-                //     </Link>
-                //     <Link className="navLink" to="/profile">
-                //         Profile    
-                //     </Link>
-                // </>
                 <MenuComponent />
             )}
             </div>
-            <HeaderCarousel />
+            <Link to="/home">
+                <h1 className="nav-title">lendIt</h1>
+            </Link>
+            <div className="header-carousel">
+                <HeaderCarousel />
+            </div>
         </div>
     )
 }
