@@ -1,18 +1,22 @@
 import {useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import Grid from '@material-ui/core/Grid';
+import Grid from '@mui/material/Grid';
+
+import Search from '../Search/Search';
 
 function Home() {
     const dispatch = useDispatch();
     const history = useHistory();
-    const items = useSelector(store => store.items);
+    const items = useSelector((store) => store.items);
 
     useEffect(() => {
         dispatch({ type: 'FETCH_ITEMS' });
     }, []);
     
     return (
+        <>
+        <Search />
         <Grid container>
                 {items.map((item) => {
                     return (
@@ -36,6 +40,7 @@ function Home() {
                     </Grid>
                 )})}
         </Grid>
+        </>
     )
 }
 

@@ -8,8 +8,7 @@ router.get('/', (req, res) => {
     FROM items
     JOIN "user" ON items.user_id = "user".id
     ORDER BY items.inserted_at
-    DESC
-    LIMIT 4;
+    DESC;
   `;
   pool.query(query)
     .then(result => {
