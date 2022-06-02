@@ -15,7 +15,7 @@ function Home() {
     const cardStyle = {
         display: 'block',
         width: '60vw',
-        height: '15vw'
+        height: '5vw'
     }
 
     useEffect(() => {
