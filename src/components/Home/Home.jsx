@@ -5,64 +5,56 @@ import {useDispatch, useSelector} from 'react-redux';
 import Search from '../Search/Search';
 
 import './Home.css';
-import {Box} from '@mui/material';
-import {Card} from '@mui/material';
+import Card from 'react-bootstrap/Card'
 import {Grid} from '@mui/material';
+import {spacing} from '@mui/system';
 
 function Home() {
     const dispatch = useDispatch();
     const history = useHistory();
     const items = useSelector((store) => store.items);
 
-    const cardStyle = {
-        width: '60vw',
-        height: '5vw'
-    }
-
     useEffect(() => {
         dispatch({ type: 'FETCH_ITEMS' });
     }, []);
     
     return (
-        <>
-            <Search />
-            <Grid
-                container
-                sx={{
-                    justifyContent: 'flex-end'
-                }}
-            >
-                {items.map((item) => {
-                    return (
-                        <Box
-                            sx={{
-                                backgroundColor: 'secondary'
-                            }}
-                        >
-                            <Card style={cardStyle}>
+        <div className="wrapper">
+            <div className="one"></div>
+            <Grid container>
+                <div className="box">
+                    <Search />
+                    {items.map((item) => {
+                        return (
+                            <Card
+                                onClick={() => {
+                                    history.push(`/details/${item.id}`)
+                                }}
+                            >
+                                <Card.Header className="card-header-color">
+                                    {item.title}
+                                </Card.Header>
                                 <Grid
                                     item
                                     key={item.id}
                                 >
-                                    <h3
-                                        onClick={() => {
-                                            history.push(`/details/${item.id}`)
-                                        }}
-                                    >
+                                    <Card.Body>
                                         <img
                                             src={item.cover}
                                         />
-                                        {item.title}
-                                    </h3>
+                                        <p>{item.comments}</p>
+                                    </Card.Body>
+                                    <Card.Footer>
                                     <a
                                         href={`mailto:${item.email_address}`}
                                     >📧</a>
+                                    </Card.Footer>
                                 </Grid>
                             </Card>
-                        </Box>
-                    )})}
+                        )})}
+                    </div>
             </Grid>
-        </>
+        </div>
     )
 }
 

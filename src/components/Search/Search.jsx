@@ -18,7 +18,11 @@ function Search() {
     console.log('**************************************************************************************************', items);
 
     return (
-        <Stack sx={{width: 300}}>
+        <Stack sx={{
+            width: 300,
+            margin: "auto",
+            padding: "10px"
+        }}>
             <Autocomplete
                 id="search-bar"
                 freeSolo

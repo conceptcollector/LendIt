@@ -7,6 +7,8 @@ body,
 body {
   font-family: 'Libre Franklin', sans-serif;
   margin: 0px;
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 
 img {
@@ -122,4 +124,8 @@ img {
 
 h3 {
   padding: 10px;
+}
+
+a {
+  text-decoration: none;
 }

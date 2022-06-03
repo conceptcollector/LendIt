@@ -2,3 +2,21 @@ body {
     background-image: url('../../../public/images/stacks.jpeg');
     background-size: cover;
 }
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.box {
+    background-color: #6c838f;
+    margin-top: 0;
+    min-height: 100vw;
+    min-width: 67vw;
+    justify-content: flex-end;
+}
+
+.card-header-color {
+    background-color: #674736;
+    color: white;
+}
