@@ -8,15 +8,31 @@ body {
     grid-template-columns: 1fr 2fr;
 }
 
+.one {
+    min-height: 100vw;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 .box {
     background-color: #6c838f;
     margin-top: 0;
     min-height: 100vw;
     min-width: 67vw;
+    display: flex;
     justify-content: flex-end;
+    flex-wrap: wrap;
 }
 
 .card-header-color {
     background-color: #674736;
     color: white;
+}
+
+.mx-auto {
+    margin: auto;
+}
+
+p {
+    font-size: 10pt;
 }

@@ -20,8 +20,6 @@ function Search() {
     return (
         <Stack sx={{
             width: 300,
-            margin: "auto",
-            padding: "10px"
         }}>
             <Autocomplete
                 id="search-bar"
