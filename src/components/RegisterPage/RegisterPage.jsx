@@ -2,6 +2,8 @@ import React from 'react';
 
 import { useHistory } from 'react-router-dom';
 import RegisterForm from '../RegisterForm/RegisterForm';
+
+import {Button} from '@mui/material';
 import './RegisterPage.css';
 
 function RegisterPage() {
@@ -10,8 +12,19 @@ function RegisterPage() {
   return (
     <div>
       <RegisterForm />
-
       <center>
+        <Button
+          variant="contained"
+          size="large"
+          color="primary"
+          onClick={() => {
+            history.push('/login');
+          }}
+        >
+          Log in
+        </Button>
+      </center>
+      {/* <center>
         <button
           type="button"
           className="btn btn_asLink"
@@ -21,7 +34,7 @@ function RegisterPage() {
         >
           Login
         </button>
-      </center>
+      </center> */}
     </div>
   );
 }

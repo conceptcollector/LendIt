@@ -1,3 +1,6 @@
-.registration-button {
-    background-color: #fafafa;
+.highlight-registry {
+    display: inline-block;
+    background-color:rgba(0,0,0,0.4);
+    color: #fafafa;
+    font-weight: bold;
 }

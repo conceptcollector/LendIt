@@ -12,6 +12,9 @@ function LoginPage() {
     <div>
       <LoginForm />
       <center>
+        <div>
+          <h4 className="highlight-registry">Need an account?</h4>
+        </div>
         <Button
           variant="contained"
           size="large"
