@@ -1,15 +1,15 @@
 import {useEffect} from 'react';
-import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 
 // import Search from '../Search/Search';
 
 import './Home.css';
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
+import {Grid} from '@mui/material';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 
 function Home() {
     const dispatch = useDispatch();
-    const history = useHistory();
     const items = useSelector((store) => store.items);
 
     useEffect(() => {
@@ -27,33 +27,44 @@ function Home() {
                     {items.map((item) => {
                         return (
                             <Card
-                                className="each-card"
+                                className="home-each-card"
                                 key={item.id}
                             >
                                 <Card.Header
                                     className="card-header"
                                     color="#fafafa"
                                 >
-                                    {item.title}
+                                    <center>
+                                        {item.title} - {item.author}
+                                    </center>
                                 </Card.Header>
                                 <Card.Body
                                     className="card-body"
                                 >
+                                    <center>
                                     <img
+                                        className="home-cover"
                                         backgroundColor="#fafafa"
                                         color="#222"
                                         src={item.cover}
                                     />
+                                    </center>
                                     <p>
                                         {item.comments}
                                     </p>
                                     
                                 </Card.Body>
                                 <Card.Footer className="card-footer">
-                                    <a
-                                        margin="auto"
-                                        href={`mailto:${item.email_address}`}
-                                    >📧</a>
+                                    <center>
+                                        <a
+                                            href={`mailto:${item.email_address}?Subject=${item.title}`}
+                                            target="_blank"
+                                        >
+                                            <EmailOutlinedIcon
+                                                color="outline"
+                                            />
+                                        </a>
+                                    </center>
                                 </Card.Footer>
                         </Card>
                     )})}
