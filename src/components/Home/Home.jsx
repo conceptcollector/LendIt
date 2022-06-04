@@ -5,7 +5,6 @@ import {useDispatch, useSelector} from 'react-redux';
 
 import './Home.css';
 import Card from 'react-bootstrap/Card';
-import {Grid} from '@mui/material';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 
 function Home() {

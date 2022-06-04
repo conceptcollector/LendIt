@@ -3,11 +3,6 @@
     grid-template-columns: 1fr 2fr;
 }
 
-.one {
-    display: flex;
-    flex-direction: column;
-}
-
 .box {
     margin-top: 0;
     min-width: 67vw;
