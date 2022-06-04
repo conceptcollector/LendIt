@@ -2,7 +2,6 @@ import {useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 
-// import Footer from '../Footer/Footer';
 // import Search from '../Search/Search';
 
 import './Home.css';

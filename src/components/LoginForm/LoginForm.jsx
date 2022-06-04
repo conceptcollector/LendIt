@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {useSelector} from 'react-redux';
 
-
 import {Button} from '@mui/material';
 import {TextField} from '@mui/material';
 
@@ -36,8 +35,6 @@ function LoginForm() {
           {errors.loginMessage}
         </h3>
       )}
-
-      {/* <div> */}
 
         <div>
           
