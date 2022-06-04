@@ -3,19 +3,14 @@
     grid-template-columns: 1fr 2fr;
 }
 
-.one {
-    display: flex;
-    flex-direction: column;
-}
-
 .box {
     margin-top: 0;
     min-width: 67vw;
 }
 
-.each-card {
+.home-each-card {
     block-size: fit-content;
-    width: 100%;
+    width: 50%;
 }
 
 .card-header {
@@ -25,6 +20,10 @@
 
 .card-body {
     color: #444;
+}
+
+.home-cover {
+    margin: auto;
 }
 
 .card-footer {
