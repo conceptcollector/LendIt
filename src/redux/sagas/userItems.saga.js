@@ -25,7 +25,7 @@ function* updateItem(action) {
         data: itemToEdit
     })
     yield put({
-        type: 'FETCH_ITEMS'
+        type: 'FETCH_USER_ITEMS'
     })
     } catch (error) {
         console.log(error);

@@ -2,12 +2,11 @@ import {useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 
-import Footer from '../Footer/Footer';
-import Search from '../Search/Search';
+// import Footer from '../Footer/Footer';
+// import Search from '../Search/Search';
 
 import './Home.css';
 import Card from 'react-bootstrap/Card'
-import {Grid} from '@mui/material';
 
 function Home() {
     const dispatch = useDispatch();
@@ -21,51 +20,44 @@ function Home() {
     return (
         <div className="wrapper">
             <div className="one">
-                <Footer />
+                <div></div>
+                {/* <Footer /> */}
             </div>
             <div className="box">
-                <Search />
-                <Grid
-                    container
-                    sx={{
-                        flexWrap: 'wrap'
-                    }}
-                >
+                {/* <Search /> */}
                     {items.map((item) => {
                         return (
                             <Card
-                                style={{
-                                    width: "50%"
-                                }}
-                                onClick={() => {                                        
-                                    history.push(`/details/$ {item.id}`)
-                                }}
+                                className="each-card"
+                                key={item.id}
                             >
-                                <Card.Header className="card-header-color">
+                                <Card.Header
+                                    className="card-header"
+                                    color="#fafafa"
+                                >
                                     {item.title}
                                 </Card.Header>
-                                <Grid
-                                    item
-                                    key={item.id}
+                                <Card.Body
+                                    className="card-body"
                                 >
-                                <Card.Body>
                                     <img
-                                        margin="auto"
+                                        backgroundColor="#fafafa"
+                                        color="#222"
                                         src={item.cover}
                                     />
                                     <p>
                                         {item.comments}
                                     </p>
+                                    
                                 </Card.Body>
-                                <Card.Footer>
+                                <Card.Footer className="card-footer">
                                     <a
+                                        margin="auto"
                                         href={`mailto:${item.email_address}`}
                                     >📧</a>
                                 </Card.Footer>
-                            </Grid>
                         </Card>
                     )})}
-                </Grid>
             </div>
         </div>
     )

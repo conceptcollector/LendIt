@@ -1,4 +1,44 @@
-body {
-    background-image: url('../../../public/images/easy-chair.jpeg');
-    background-size: cover;
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* background:rgba(0,0,0,0.25) */
+}
+
+.one {
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    margin-top: 0;
+    min-width: 67vw;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.each-card {
+    block-size: fit-content;
+    width: 50%;
+}
+
+.card-header {
+    background-color: #6c838f;
+    color: #fafafa;
+}
+
+.card-footer {
+    background-color: #6c838f;
+}
+
+h1 {
+    color: #fafafa;
+}
+
+h2 {
+    color: #fafafa;
+}
+
+p {
+    font-size: 10pt;
 }

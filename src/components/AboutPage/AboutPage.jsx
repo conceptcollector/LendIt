@@ -1,5 +1,7 @@
 import React from 'react';
 
+// import Footer from '../Footer/Footer';
+
 import './AboutPage.css';
 
 // This is one of our simplest components
@@ -9,9 +11,26 @@ import './AboutPage.css';
 
 function AboutPage() {
   return (
-    <div className="container">
-      <div>
-        <p>This about page is for anyone to read!</p>
+    <div className="about-wrapper">
+      <div className="about-one">
+        {/* <div></div> */}
+        {/* <Footer /> */}
+      </div>
+      <div className="about-box">
+        <h2>Technologies used:</h2>
+        <ul></ul>
+          <li>React</li>
+          <li>React-Redux</li>
+          <li>Redux-Saga</li>
+          <li>Node.js</li>
+          <li>PostgreSQL</li>
+          <li>CSS Bootstrap</li>
+          <li>Material UI</li>
+        <p>Thank you to:</p>
+          <li>The Dahl Cohort</li>
+          <li>Matt Black</li>
+          <li>Prime Digital Academy</li>
+          <li>Friends and Family</li>
       </div>
     </div>
   );
