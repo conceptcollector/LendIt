@@ -36,7 +36,9 @@ function LoginForm() {
           {errors.loginMessage}
         </h3>
       )}
-      <div id="login-box">
+
+      {/* <div> */}
+
         <div>
           
           <TextField
@@ -48,8 +50,11 @@ function LoginForm() {
             value={username}
             onChange={(event) => setUsername(event.target.value)}
           />
+
         </div>
+
         <div>
+
           <TextField
             id="standard-password-input"
             label="Password"
@@ -60,29 +65,9 @@ function LoginForm() {
             value={password}
             onChange={(event) => setPassword(event.target.value)}
           />
-          {/* <label htmlFor="username">
-            Username:
-            <input
-              type="text"
-              name="username"
-              required
-              value={username}
-              onChange={(event) => setUsername(event.target.value)}
-            />
-          </label>
+
         </div>
-        <div>
-          <label htmlFor="password">
-            Password:
-            <input
-              type="password"
-              name="password"
-              required
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-            /> */}
-          {/* </label> */}
-        </div>
+
         <Button 
           variant="outlined"
           color="outline"
@@ -92,7 +77,6 @@ function LoginForm() {
         >
           Log In
         </Button>
-      </div>
     </form>
   );
 }
