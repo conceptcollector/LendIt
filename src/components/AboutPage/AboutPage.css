@@ -1,22 +1,9 @@
-body {
-    background-image: url('../../../public/images/login-page.jpeg');
-    background-size: cover;
-}
-
-.about-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    /* background:rgba(0,0,0,0.25) */
-}
-
-.about-one {
-    display: flex;
-    flex-direction: column;
-}
-
-.about-box {
-    margin-top: 0;
-    min-width: 67vw;
+#about {
     background-color: #6c838f;
-    color: #fafafa;
+    min-height: 100vh;
+    color: pink;
+}
+
+#technologies {
+    margin-left: 40px;
 }
