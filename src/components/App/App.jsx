@@ -30,6 +30,9 @@ const theme = createTheme({
     secondary: {
       main: '#6c838f'
     },
+    tertiary: {
+      main: '#800080'
+    },
     outline: {
       main: '#fafafa'
     }

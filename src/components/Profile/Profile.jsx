@@ -32,7 +32,7 @@ function Profile() {
     }
 
     return (
-        <div className="profile-rows">
+        <div id="profile">
             <div className="profile-one">
                 {user.emailAddress ?
                 <div>
@@ -54,13 +54,16 @@ function Profile() {
                 :
                 <div></div>
                 }
-                {/* <Footer /> */}
             </div>
+
             <div className="profile-two">
-                <div>
-                    <h1 id="profile-welcome">Welcome {user.username}!</h1>
-                    <h5>Got a new favorite?</h5>
+
+                <div id="profile-welcome">
+
+                    <h1>Welcome {user.username}!</h1>
+                    
                 </div>
+                    <h5>Got a new favorite?</h5>
                 <div id="add-item-button">
                     <Button
                         variant="contained"
@@ -78,19 +81,14 @@ function Profile() {
                 {items.map((item) => {
                     return (
                         <Card
-                                className="each-card"
+                                className="profile-each-card"
                                 key={item.id}
                             >
-                                <Card.Header
-                                    className="card-header"
-                                    color="#fafafa"
-                                >
-                                    {item.title}
-                                </Card.Header>
                                 <Card.Body
                                     className="card-body"
                                 >
                                     <img
+                                        class="profile-image"
                                         margin="auto"
                                         backgroundColor="#fafafa"
                                         color="#222"
@@ -102,52 +100,29 @@ function Profile() {
                                     
                                 </Card.Body>
                                 <Card.Footer className="card-footer">
-                                <Button
-                                    onClick={() => {
-                                        history.push(`/edit/${item.id}`)
-                                }}
-                                >
-                                    Edit
-                                </Button>
-                                <Button
-                                    color="outline"
-                                    onClick={() => {
-                                        dispatch({
-                                            type: 'DELETE_ITEM',
-                                            payload: item.id
-                                        })
-                                    }}
-                                >
-                                    Delete
-                                </Button>
+                                    <center>
+                                        <Button
+                                            color="outline"
+                                            onClick={() => {
+                                                history.push(`/edit/${item.id}`)
+                                            }}
+                                        >
+                                            Edit
+                                        </Button>
+                                        <Button
+                                            color="outline"
+                                            onClick={() => {
+                                                dispatch({
+                                                    type: 'DELETE_ITEM',
+                                                    payload: item.id
+                                                })
+                                            }}
+                                        >
+                                            Delete
+                                        </Button>
+                                    </center>
                                 </Card.Footer>
                         </Card>
-                        // <Grid item key={item.id}>
-                        //     <img 
-                        //         src={item.cover}
-                        //     />
-                        
-                        //     <h3>
-                        //         {item.title}
-                        //     </h3>
-                        //     <button
-                        //         onClick={() => {
-                        //             history.push(`/edit/${item.id}`)
-                        //         }}
-                        //     >
-                        //         Edit
-                        //     </button>
-                        //     <button
-                        //         onClick={() => {
-                        //             dispatch({
-                        //                 type: 'DELETE_ITEM',
-                        //                 payload: item.id
-                        //             })
-                        //         }}
-                        //     >
-                        //         Delete
-                        //     </button>
-                        // </Grid>
                     )})}
             </div>
         </div>

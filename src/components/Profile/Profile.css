@@ -1,5 +1,6 @@
-.profile-rows {
+#profile {
     background:rgba(0,0,0,0.4);
+    min-height: 100vw;
 }
 
 .profile-one {
@@ -15,10 +16,14 @@
     text-align: center;
 }
 
-/* 
+
 #profile-welcome {
-    margin-top: 40px;
-} */
+    margin-top: 14px;
+}
+
+#add-item-button {
+    margin-top: 10px;
+}
 
 .profile-three {
     margin-top: 0;
@@ -27,16 +32,21 @@
 }
 
 .inventory {
+    margin-top: 17px;
     color: #fafafa;
 }
 
-.each-card {
-    block-size: fit-content;
+.profile-each-card {
+    margin: auto;
 }
 
 .card-header {
     background-color: #6c838f;
     color: #fafafa;
+}
+
+.profile-image {
+    height: 200px;
 }
 
 .card-footer {

@@ -3,6 +3,8 @@ import {useHistory} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 
 import './AddItem.css';
+import {TextField, Button} from '@mui/material';
+import {alpha} from '@mui/material/styles';
 
 function AddItem() {
 
@@ -32,41 +34,82 @@ function AddItem() {
     }
 
     return (
-        <form
-            onSubmit={handleSubmit}
-        >
-            <input
-                onChange={(e) => setItemTitle(e.target.value)}
-                placeholder="title"
-                value={itemTitle}
+        <div id="add-item">
+            <div></div>
+            <form
+                id ="add-item-form"
+                onSubmit={handleSubmit}
             >
-            </input>
-            <input
-                onChange={(e) => setItemAuthor(e.target.value)}
-                placeholder="author"
-                value={itemAuthor}
-            >
-            </input>
-            <input
-                onChange={(e) => setItemCover(e.target.value)}
-                placeholder="cover (url)"
-                value={itemCover}
-            >
-            </input>
-            <input
-                onChange={(e) => setItemMediaType(e.target.value)}
-                placeholder="media type"
-                value={itemMediaType}
-            >
-            </input>
-            <input
-                onChange={(e) => setItemComments(e.target.value)}
-                placeholder="comments"
-                value={itemComments}
-            >
-            </input>
-            <button>Submit</button>
-        </form>
+                <TextField
+                    id="add-item-title"
+                    required
+                    variant="standard"
+                    color="tertiary"
+                    sx={{mt: 4}}
+                    style={{width: "50%"}}
+                    onChange={(e) => setItemTitle(e.target.value)}
+                    placeholder="title"
+                    value={itemTitle}
+                >
+                </TextField>
+                <TextField
+                    id="add-item-author"
+                    variant="standard"
+                    color="tertiary"
+                    sx={{mt: 4}}
+                    style={{width: "50%"}}
+                    onChange={(e) => setItemAuthor(e.target.value)}
+                    placeholder="author"
+                    value={itemAuthor}
+                >
+                </TextField>
+                <TextField
+                    id="add-item-cover"
+                    variant="standard"
+                    color="tertiary"
+                    sx={{mt: 4}}
+                    style={{width: "50%"}}
+                    onChange={(e) => setItemCover(e.target.value)}
+                    placeholder="cover (url)"
+                    value={itemCover}
+                >
+                </TextField>
+                <TextField
+                    id="add-item-media-type"
+                    variant="standard"
+                    color="tertiary"
+                    sx={{mt: 4}}
+                    style={{width: "50%"}}
+                    onChange={(e) => setItemMediaType(e.target.value)}
+                    placeholder="media type"
+                    value={itemMediaType}
+                >
+                </TextField>
+                <TextField
+                    id="add-item-comments"
+                    variant="standard"
+                    color="tertiary"
+                    multiline
+                    rows={5}
+                    maxRows={10}
+                    sx={{mt: 4, mr: 17}}
+                    onChange={(e) => setItemComments(e.target.value)}
+                    placeholder="comments"
+                    value={itemComments}
+                >
+                </TextField>
+                <Button
+                    id="actual-add-item-button"
+                    type="submit"
+                    variant="contained"
+                    size="large"
+                    color="tertiary"
+                    sx={{mt: 4, ml: 10}}
+                >
+                    Submit
+                </Button>
+            </form>
+        </div>
     )
 }
 

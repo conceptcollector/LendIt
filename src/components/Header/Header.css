@@ -1,25 +1,38 @@
 .nav {
   /* flex box layout */
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
 
   margin: 0;
   background-color: #674736;
+  color: #fafafa;
   overflow: hidden;
+  justify-content: space-evenly;
 }
 
 .nav a {
   text-decoration: none;
 }
 
+/* #header-not-carousel {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+} */
+
 .nav-title {
-  font-size: 200%;
+  font-size: 400%;
   font-weight: 700;
   font-family: 'Libre Baskerville', serif;
   color: #fafafa;
   padding-left: 10px;
-  margin: 0;
+  margin: 0 40px 0 0;
+}
+
+.navLinks {
+  display: flex;
+  margin-left: 25px;
 }
 
 .navLink {
@@ -30,8 +43,6 @@
   padding: 10px 14px;
   text-decoration: none;
   font-size: 20px;
-  margin: auto;
-
   /* these last two make the logout button in
   the nav bar look like another link */
   border: none;
