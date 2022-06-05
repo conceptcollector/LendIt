@@ -59,11 +59,11 @@ function Profile() {
             <div className="profile-two">
 
                 <div id="profile-welcome">
-
-                    <h1>Welcome {user.username}!</h1>
-                    
+                    <center>
+                        <h1>Welcome {user.username}!</h1>
+                        <h5>Got a new favorite?</h5>
+                    </center>
                 </div>
-                    <h5>Got a new favorite?</h5>
                 <div id="add-item-button">
                     <Button
                         variant="contained"

@@ -1,0 +1,37 @@
+#edit-item {
+    background:rgba(0,0,0,0.4);
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 100vh;
+}
+
+#edit-item-form {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+}
+
+#edit-item-title {
+    background-color: #fafafa;
+}
+
+#edit-item-author {
+    background-color: #fafafa;
+}
+
+#edit-item-cover {
+    background-color: #fafafa;
+}
+
+#edit-item-media-type {
+    background-color: #fafafa;
+}
+
+#edit-item-comments {
+    background-color: #fafafa;
+}
+
+#edit-item-button {
+    max-width: 147px;
+}
