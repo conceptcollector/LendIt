@@ -18,7 +18,7 @@
     display: inline-block;
     margin-top: 0;
     block-size: fit-content;
-    width: 100%;
+    width: 50%;
 }
 
 .card-header {
@@ -27,11 +27,14 @@
 }
 
 .card-body {
+    display: grid;
+    grid-template-columns: auto auto;
     color: #444;
 }
 
 .home-cover {
-    margin: auto;
+    height: 75px;
+    margin-right: 10px;
 }
 
 .card-footer {
