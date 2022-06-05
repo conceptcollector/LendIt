@@ -1,0 +1,38 @@
+#add-item {
+    background:rgba(0,0,0,0.4);
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 100vh;
+}
+
+#add-item-form {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+}
+
+#add-item-title {
+    background-color: #fafafa;
+}
+
+#add-item-author {
+    background-color: #fafafa;
+}
+
+#add-item-cover {
+    background-color: #fafafa;
+}
+
+#add-item-media-type {
+    background-color: #fafafa;
+}
+
+#add-item-comments {
+    background-color: #fafafa;
+    padding: 0;
+}
+
+#actual-add-item-button {
+    max-width: 147px;
+}

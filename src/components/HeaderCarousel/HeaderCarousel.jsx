@@ -1,6 +1,7 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
+import './HeaderCarousel.css';
 import {Carousel} from 'react-bootstrap';
 
 function HeaderCarousel() {
@@ -17,7 +18,7 @@ function HeaderCarousel() {
     }
 
     return (
-        <>
+        <div id="header-carousel">
             <Carousel
                 controls={false}
                 indicators={false}
@@ -28,12 +29,16 @@ function HeaderCarousel() {
                         <Carousel.Item
                             style={carouselStyle}
                         >
-                            <img src={cover.src} key={cover.id} />
+                            <img
+                                id="carousel-image"
+                                src={cover.src}
+                                key={cover.id}
+                            />
                         </Carousel.Item>
                     )
                 })}
             </Carousel>
-        </>
+        </div>
     )
 }
 

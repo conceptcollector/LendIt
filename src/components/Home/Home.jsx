@@ -40,15 +40,15 @@ function Home() {
                                 <Card.Body
                                     className="card-body"
                                 >
-                                    <center>
+                                    {/* <center> */}
                                     <img
                                         className="home-cover"
                                         backgroundColor="#fafafa"
                                         color="#222"
                                         src={item.cover}
                                     />
-                                    </center>
-                                    <p>
+                                    {/* </center> */}
+                                    <p className="home-comments">
                                         {item.comments}
                                     </p>
                                     

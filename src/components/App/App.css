@@ -16,10 +16,6 @@ body {
   grid-template-rows: auto 1fr;
 }
 
-img {
-  display: inline-block;
-  max-width: 100%;
-}
 
 /* --------------------------------------------------------------------------------
 Container
@@ -123,11 +119,6 @@ input {
 
 li {
   list-style-type: none;
-}
-
-img {
-  height: 50px;
-  width: auto;
 }
 
 h3 {

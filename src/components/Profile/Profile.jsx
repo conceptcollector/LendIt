@@ -4,7 +4,8 @@ import {useDispatch, useSelector} from 'react-redux';
 
 // import Footer from '../Footer/Footer';
 
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
+import {Button} from '@mui/material';
 import './Profile.css';
 
 function Profile() {
@@ -31,103 +32,97 @@ function Profile() {
     }
 
     return (
-        <div className="wrapper">
-            <div className="one">
+        <div id="profile">
+            <div className="profile-one">
+                {user.emailAddress ?
+                <div>
+
+                    <h4>Add your email address to connect with other users:</h4>
+                    <form
+                        onSubmit={handleSubmit}
+                    >
+                        <input
+                            placeholder='email address'
+                            type="email"
+                            onChange={(e) => setEmailAddress(e.target.value)}
+                            value={emailAddress}
+                        >
+                        </input>
+                        <Button>Submit</Button>
+                    </form>
+                </div>
+                :
                 <div></div>
-                {/* <Footer /> */}
+                }
             </div>
-            <div className="box">
-                <h1>Welcome {user.username}!</h1>
-                <button
-                onClick={() => {
-                    history.push('/addItem')
-                }}
-            >
-                Add Item
-            </button>
-            <form
-                onSubmit={handleSubmit}
-            >
-                <input
-                    placeholder='email address'
-                    type="email"
-                    onChange={(e) => setEmailAddress(e.target.value)}
-                    value={emailAddress}
-                >
-                </input>
-                <button>Submit</button>
-            </form>
-            <h2>lendIt Inventory:</h2>
+
+            <div className="profile-two">
+
+                <div id="profile-welcome">
+
+                    <h1>Welcome {user.username}!</h1>
+                    
+                </div>
+                    <h5>Got a new favorite?</h5>
+                <div id="add-item-button">
+                    <Button
+                        variant="contained"
+                        onClick={() => {
+                            history.push('/addItem')
+                        }}
+                    >
+                        Add Item
+                    </Button>
+                </div>
+                <h2 className="inventory">LendIt Inventory:</h2>
+            </div>
+
+            <div className="profile-three">
                 {items.map((item) => {
                     return (
                         <Card
-                                className="each-card"
+                                className="profile-each-card"
                                 key={item.id}
                             >
-                                <Card.Header
-                                    className="card-header"
-                                    color="#fafafa"
+                                <Card.Body
+                                    className="card-body"
                                 >
-                                    {item.title}
-                                </Card.Header>
-                                <Card.Body>
                                     <img
-                                        margin="auto"
+                                        class="profile-image"
+                                        style={{mt: 2}}
                                         backgroundColor="#fafafa"
                                         color="#222"
                                         src={item.cover}
                                     />
-                                    <p>
+                                    {/* <p>
                                         {item.comments}
-                                    </p>
+                                    </p> */}
                                     
                                 </Card.Body>
                                 <Card.Footer className="card-footer">
-                                <button
-                                    onClick={() => {
-                                        history.push(`/edit/${item.id}`)
-                                }}
-                                >
-                                    Edit
-                                </button>
-                                <button
-                                    onClick={() => {
-                                        dispatch({
-                                            type: 'DELETE_ITEM',
-                                            payload: item.id
-                                        })
-                                    }}
-                                >
-                                    Delete
-                                </button>
+                                    <center>
+                                        <Button
+                                            color="outline"
+                                            onClick={() => {
+                                                history.push(`/edit/${item.id}`)
+                                            }}
+                                        >
+                                            Edit
+                                        </Button>
+                                        <Button
+                                            color="outline"
+                                            onClick={() => {
+                                                dispatch({
+                                                    type: 'DELETE_ITEM',
+                                                    payload: item.id
+                                                })
+                                            }}
+                                        >
+                                            Delete
+                                        </Button>
+                                    </center>
                                 </Card.Footer>
                         </Card>
-                        // <Grid item key={item.id}>
-                        //     <img 
-                        //         src={item.cover}
-                        //     />
-                        
-                        //     <h3>
-                        //         {item.title}
-                        //     </h3>
-                        //     <button
-                        //         onClick={() => {
-                        //             history.push(`/edit/${item.id}`)
-                        //         }}
-                        //     >
-                        //         Edit
-                        //     </button>
-                        //     <button
-                        //         onClick={() => {
-                        //             dispatch({
-                        //                 type: 'DELETE_ITEM',
-                        //                 payload: item.id
-                        //             })
-                        //         }}
-                        //     >
-                        //         Delete
-                        //     </button>
-                        // </Grid>
                     )})}
             </div>
         </div>
