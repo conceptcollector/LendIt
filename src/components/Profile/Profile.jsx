@@ -89,7 +89,7 @@ function Profile() {
                                 >
                                     <img
                                         class="profile-image"
-                                        margin="auto"
+                                        style={{mt: 2}}
                                         backgroundColor="#fafafa"
                                         color="#222"
                                         src={item.cover}
