@@ -11,26 +11,32 @@ import './AboutPage.css';
 
 function AboutPage() {
   return (
-    <div className="about-wrapper">
-      <div className="about-one">
-        {/* <div></div> */}
-        {/* <Footer /> */}
-      </div>
-      <div className="about-box">
+    <div id="about">
+      {/* <Footer /> */}
+      <div id="technologies">
         <h2>Technologies used:</h2>
-        <ul></ul>
-          <li>React</li>
-          <li>React-Redux</li>
-          <li>Redux-Saga</li>
-          <li>Node.js</li>
-          <li>PostgreSQL</li>
-          <li>CSS Bootstrap</li>
-          <li>Material UI</li>
-        <p>Thank you to:</p>
-          <li>The Dahl Cohort</li>
-          <li>Matt Black</li>
-          <li>Prime Digital Academy</li>
-          <li>Friends and Family</li>
+          <ul>
+            <li>React</li>
+            <li>React-Redux</li>
+            <li>Redux-Saga</li>
+            <li>Node.js</li>
+            <li>PostgreSQL</li>
+            <li>CSS Bootstrap</li>
+            <li>Material UI</li>
+          </ul>
+        <h2>Coming soon:</h2>
+          <ul>
+            <li>Search</li>
+            <li>Geolocation</li>
+            <li>Chat</li>
+          </ul>
+        <h2>Thank you to:</h2>
+          <ul>
+            <li>The Dahl Cohort</li>
+            <li>Matt Black</li>
+            <li>Prime Digital Academy</li>
+            <li>Friends and Family</li>
+          </ul>
       </div>
     </div>
   );
