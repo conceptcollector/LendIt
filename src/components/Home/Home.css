@@ -3,14 +3,22 @@
     grid-template-columns: 1fr 2fr;
 }
 
+.one {
+    display: flex;
+    flex-direction: column;
+}
+
 .box {
     margin-top: 0;
+    flex-flow: row;
     min-width: 67vw;
 }
 
 .home-each-card {
+    display: inline-block;
+    margin-top: 0;
     block-size: fit-content;
-    width: 50%;
+    width: 100%;
 }
 
 .card-header {

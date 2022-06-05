@@ -1,25 +1,37 @@
-.wrapper {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    /* background:rgba(0,0,0,0.25) */
+.profile-rows {
+    background:rgba(0,0,0,0.4);
 }
 
-.one {
+.profile-one {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.profile-two {
+    color: #fafafa;
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
-.box {
+/* 
+#profile-welcome {
+    margin-top: 40px;
+} */
+
+.profile-three {
     margin-top: 0;
-    min-width: 67vw;
     display: flex;
-    justify-content: flex-end;
     flex-wrap: wrap;
+}
+
+.inventory {
+    color: #fafafa;
 }
 
 .each-card {
     block-size: fit-content;
-    width: 100%;
 }
 
 .card-header {

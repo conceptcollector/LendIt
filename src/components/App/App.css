@@ -17,8 +17,7 @@ body {
 }
 
 img {
-  display: inline-block;
-  max-width: 100%;
+  height: 100px;
 }
 
 /* --------------------------------------------------------------------------------
@@ -123,11 +122,6 @@ input {
 
 li {
   list-style-type: none;
-}
-
-img {
-  height: 50px;
-  width: auto;
 }
 
 h3 {
