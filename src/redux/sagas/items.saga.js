@@ -24,18 +24,9 @@ function* fetchOneItem(action) {
     })
 }
 
-function* addItem(action) {
-    const response = yield axios({
-        method: 'POST',
-        url: '/api/items',
-        data: action.payload
-    })
-}
-
 function* itemsSaga() {
     yield takeLatest('FETCH_ITEMS', fetchAllItems);
     yield takeLatest('FETCH_ITEM', fetchOneItem);
-    yield takeLatest('ADD_ITEM', addItem);
 }
 
 export default itemsSaga;
