@@ -12,21 +12,8 @@ function* fetchAllItems() {
     }     
 }
 
-function* fetchOneItem(action) {
-    const itemId = action.payload;
-    const response = yield axios({
-        method: 'GET',
-        url: `/api/items/${itemId}`
-    })
-    yield put({
-        type: 'SET_EDIT_ITEM',
-        payload: response.data
-    })
-}
-
 function* itemsSaga() {
     yield takeLatest('FETCH_ITEMS', fetchAllItems);
-    yield takeLatest('FETCH_ITEM', fetchOneItem);
 }
 
 export default itemsSaga;
