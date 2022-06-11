@@ -34,8 +34,9 @@ Bootstrap CSS
 
 ## Roadmap
 
-- [ ] add search 
-- [ ] add itemDetails Component
+- [ ] add search
+- [ ] alter about component
+- [ ] add itemDetails component
     - [ ] limit home to an aesthetically pleasing number of items.
 - [ ] add zip code API functionality
 - [ ] add OpenLibrary API functionality for adding items
