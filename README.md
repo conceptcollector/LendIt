@@ -23,14 +23,14 @@ The add item and edit item screens are close to identical. The users can input a
 
 ## Built With
 
-React.js
-React-Redux.js
-Redux-Saga.js
-Express.js
-Node.js
-PostgreSQL
-MUI
-Bootstrap CSS
+* React.js
+* React-Redux.js
+* Redux-Saga.js
+* Express.js
+* Node.js
+* PostgreSQL
+* MUI
+* Bootstrap CSS
 
 ## Roadmap
 
