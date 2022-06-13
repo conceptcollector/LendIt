@@ -45,7 +45,7 @@ The add item and edit item screens are close to identical. The users can input a
     - [ ] add in email support
 
 ## Acknowledgement
-Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality.
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. Thanks to the Dahl cohort for being so supportive. Couldn't have asked for a better group. Thanks to the Freddy and Andrew from the Butler cohort for looking at my code and giving helpful guidance. And special thanks to Anissa for being willing to be the model for my app.
 
 ## Support
 If you have suggestions or issues, please email me at boyd.christopher.t@gmail.com
