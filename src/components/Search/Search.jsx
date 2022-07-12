@@ -1,13 +1,10 @@
-import {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import TextField from '@mui/material/TextField';
-import Stack from '@mui/material/Stack';
-import Autocomplete from '@mui/material/Autocomplete';
-import {Box} from '@mui/system';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Autocomplete, Box, Stack, TextField } from '@mui/material';
 
 function Search() {
-    const [value, setValue] = useState('');
-    const [inputValue, setInputValue] = useState('');
+    const [ value, setValue ] = useState('');
+    const [ inputValue, setInputValue ] = useState('');
     const dispatch = useDispatch();
     const items = useSelector((store) => store.items);
 
@@ -25,6 +22,9 @@ function Search() {
                 id="search-bar"
                 freeSolo
                 options={items.map((option) => option.title)}
+                sx={{
+                    backgroundColor: 'white'
+                }}
                 value={value}
                 inputValue={inputValue}
                 onChange={(event, newValue) => {
@@ -33,7 +33,12 @@ function Search() {
                 onInputChange={(event, newInputValue) => {
                     setInputValue(newInputValue);
                 }}
-                renderInput={(params) => <TextField {...params} label="Search" />}
+                renderInput={(params) => 
+                <TextField
+                    {...params}
+                    variant="standard"
+                    label="Search"
+                />}
             />
             <button>Search</button>
         </Stack>
