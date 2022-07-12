@@ -1,7 +1,7 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-// import Search from '../Search/Search';
+import Search from '../Search/Search';
 
 import './Home.css';
 import Card from 'react-bootstrap/Card';
@@ -22,7 +22,7 @@ function Home() {
                 {/* <Footer /> */}
             </div>
             <div className="box">
-                {/* <Search /> */}
+                <Search />
                     {items.map((item) => {
                         return (
                             <Card
