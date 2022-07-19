@@ -12,8 +12,14 @@ function* fetchAllItems() {
     }     
 }
 
+function* fetchRecentItems() {
+    const recentItems = yield axios.get('/api/items/recent');
+    yield put ({ type: 'SET_ITEMS', payload: recentItems.data});
+}
+
 function* itemsSaga() {
     yield takeLatest('FETCH_ITEMS', fetchAllItems);
+    yield takeLatest('FETCH_RECENT_ITEMS', fetchRecentItems);
 }
 
 export default itemsSaga;

@@ -12,7 +12,7 @@ function Home() {
     const items = useSelector((store) => store.items);
 
     useEffect(() => {
-        dispatch({ type: 'FETCH_ITEMS' });
+        dispatch({ type: 'FETCH_RECENT_ITEMS' });
     }, []);
     
     return (
