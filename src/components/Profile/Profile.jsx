@@ -78,7 +78,7 @@ function Profile() {
             </div>
 
             <div className="profile-three">
-                {items.map((item) => {
+                {items.itemsReducer.map((item) => {
                     return (
                         <Card
                                 className="profile-each-card"

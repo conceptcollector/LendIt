@@ -14,7 +14,7 @@ function* fetchAllItems() {
 
 function* fetchRecentItems() {
     const recentItems = yield axios.get('/api/items/recent');
-    yield put ({ type: 'SET_ITEMS', payload: recentItems.data});
+    yield put ({ type: 'SET_RECENT_ITEMS', payload: recentItems.data});
 }
 
 function* itemsSaga() {

@@ -27,7 +27,7 @@ function Search() {
                 <Autocomplete
                     id="search-bar"
                     freeSolo
-                    options={items.map((option) => option.title)}
+                    options={items.itemsReducer.map((option) => option.title)}
                     sx={{
                         backgroundColor: 'white',
                         width: 300

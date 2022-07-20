@@ -1,3 +1,5 @@
+import { combineReducers } from 'redux';
+
 const itemsReducer = (state = [], action) => {
     switch (action.type) {
         case 'SET_ITEMS':
@@ -7,4 +9,16 @@ const itemsReducer = (state = [], action) => {
     }
 }
 
-export default itemsReducer;
+const recentItemsReducer = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_RECENT_ITEMS':
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
+export default combineReducers({
+    itemsReducer,
+    recentItemsReducer
+});

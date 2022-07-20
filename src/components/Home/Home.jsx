@@ -23,7 +23,7 @@ function Home() {
             </div>
             <div className="box">
                 <Search />
-                    {items.map((item) => {
+                    {items.recentItemsReducer.map((item) => {
                         return (
                             <Card
                                 className="home-each-card"
