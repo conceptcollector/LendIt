@@ -66,12 +66,12 @@ function App() {
               <AboutPage />
             </Route>
 
-            <Route
+            <ProtectedRoute
               exact
               path="/home"
             >
               <Home />
-            </Route>
+            </ProtectedRoute>
 
             <Route
               exact
