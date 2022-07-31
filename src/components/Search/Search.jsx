@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Autocomplete, Box, Button, Stack, TextField } from '@mui/material';
 
 function Search() {
-    const [ value, setValue ] = useState('');
-    const [ inputValue, setInputValue ] = useState('');
+    const [ value, setValue ] = useState();
+    const [ inputValue, setInputValue ] = useState();
     const dispatch = useDispatch();
     const items = useSelector((store) => store.items);
     // const history = useHistory();
@@ -13,6 +13,8 @@ function Search() {
     useEffect(() => {
         dispatch({ type: 'FETCH_ITEMS' });
     }, []);
+
+    console.log('*******************************************', value);
 
     return (
         <Box
