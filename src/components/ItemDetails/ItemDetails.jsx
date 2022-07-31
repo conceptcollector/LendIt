@@ -16,7 +16,7 @@ function ItemDetails() {
     // const history = useHistory();
     const dispatch = useDispatch();
     const itemId = params.id;
-    const item = useSelector((store) => store.editItem)
+    const item = useSelector((store) => store.editItem);
     
     
     return (

@@ -73,12 +73,12 @@ function App() {
               <Home />
             </ProtectedRoute>
 
-            <Route
+            <ProtectedRoute
               exact
               path="/details/:id"
             >
               <ItemDetails />
-            </Route>
+            </ProtectedRoute>
 
             {/* For protected routes, the view could show one of several things on the same route.
               Visiting localhost:3000/user will show the UserPage if the user is logged in.
