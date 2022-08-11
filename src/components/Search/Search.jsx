@@ -8,10 +8,8 @@ function Search() {
         dispatch({ type: 'FETCH_ITEMS' });
     }, []);
     const query = useRef();
-    // const [ value, setValue ] = useState();
-    // const [ inputValue, setInputValue ] = useState();
     const dispatch = useDispatch();
-    const items = useSelector((store) => store.items);
+    const items = useSelector((store) => store.items.itemsReducer);
     const history = useHistory();
     const handleSearch = (e) => {
         e.preventDefault();
@@ -33,24 +31,44 @@ function Search() {
                     display="flex"
                     flexDirection="column"
                 >
-                    <Autocomplete>
-                    <TextField
-                        variant="standard"
-                        label="Search"
-                        inputRef={query}
-                        sx={{
-                            width: 300,
-                            backgroundColor: 'white'
+                    <Autocomplete
+                        freeSolo
+                        options={items.map((option) => option)}
+                        getOptionLabel={(option) => `${option.title}`}
+                        renderOption={(props, option) => {
+                            return (
+                                <li
+                                    {...props}
+                                    key={option.id}
+                                    onClick={() => {
+                                        history.push(`/details/${option.id}`);
+                                    }}
+                                >
+                                    {option.title}
+                                </li>
+                            )
                         }}
+                        renderInput={(params) =>
+                            <TextField
+                                {...params}
+                                variant="standard"
+                                label="Search"
+                                inputRef={query}
+                                sx={{
+                                    width: 300,
+                                    backgroundColor: 'white'
+                                }}
+                            />
+                            {/* <Button
+                                variant="contained"
+                                type="submit"
+                                sx={{ width: 300 }}
+                            >
+                                Search
+                            </Button> */}
+                        }
                     />
-                    </Autocomplete>
-                    <Button
-                        variant="contained"
-                        type="submit"
-                        sx={{ width: 300 }}
-                    >
-                        Search
-                    </Button>
+                    
             </Box>
                 </form>
         </Box>
