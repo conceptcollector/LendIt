@@ -1,7 +1,7 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-// import Search from '../Search/Search';
+import Search from '../Search/Search';
 
 import './Home.css';
 import Card from 'react-bootstrap/Card';
@@ -12,7 +12,7 @@ function Home() {
     const items = useSelector((store) => store.items);
 
     useEffect(() => {
-        dispatch({ type: 'FETCH_ITEMS' });
+        dispatch({ type: 'FETCH_RECENT_ITEMS' });
     }, []);
     
     return (
@@ -22,8 +22,8 @@ function Home() {
                 {/* <Footer /> */}
             </div>
             <div className="box">
-                {/* <Search /> */}
-                    {items.map((item) => {
+                <Search />
+                    {items.recentItemsReducer.map((item) => {
                         return (
                             <Card
                                 className="home-each-card"

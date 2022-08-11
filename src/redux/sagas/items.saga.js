@@ -12,30 +12,14 @@ function* fetchAllItems() {
     }     
 }
 
-function* fetchOneItem(action) {
-    const itemId = action.payload;
-    const response = yield axios({
-        method: 'GET',
-        url: `/api/items/${itemId}`
-    })
-    yield put({
-        type: 'SET_EDIT_ITEM',
-        payload: response.data
-    })
-}
-
-function* addItem(action) {
-    const response = yield axios({
-        method: 'POST',
-        url: '/api/items',
-        data: action.payload
-    })
+function* fetchRecentItems() {
+    const recentItems = yield axios.get('/api/items/recent');
+    yield put ({ type: 'SET_RECENT_ITEMS', payload: recentItems.data});
 }
 
 function* itemsSaga() {
     yield takeLatest('FETCH_ITEMS', fetchAllItems);
-    yield takeLatest('FETCH_ITEM', fetchOneItem);
-    yield takeLatest('ADD_ITEM', addItem);
+    yield takeLatest('FETCH_RECENT_ITEMS', fetchRecentItems);
 }
 
 export default itemsSaga;
