@@ -58,7 +58,8 @@ function Search() {
                                     width: 300,
                                     backgroundColor: 'white'
                                 }}
-                            />
+                            />}
+                        />
                             {/* <Button
                                 variant="contained"
                                 type="submit"
@@ -66,10 +67,7 @@ function Search() {
                             >
                                 Search
                             </Button> */}
-                        }
-                    />
-                    
-            </Box>
+                    </Box>
                 </form>
         </Box>
     )
