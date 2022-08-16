@@ -34,7 +34,7 @@ The add item and edit item screens are close to identical. The users can input a
 
 ## Roadmap
 
-- [ ] add search
+- [x] add search
 - [ ] alter about component
 - [ ] add itemDetails component
     - [ ] limit home to an aesthetically pleasing number of items.
