@@ -11,10 +11,10 @@ function Search() {
     const dispatch = useDispatch();
     const items = useSelector((store) => store.items.itemsReducer);
     const history = useHistory();
-    const handleSearch = (e) => {
-        e.preventDefault();
-        const queryVal = query.current.value;
 
+    const handleSubmit = (e, option) => {
+        e.preventDefault();
+        history.push(`/details/${option.id}`);
     }
 
 
@@ -24,33 +24,31 @@ function Search() {
             justifyContent="flex-end"
             alignItems="flex-end"
         >
-            <form
-                onSubmit={handleSearch}
+            <Box
+                display="flex"
+                flexDirection="column"
             >
-                <Box
-                    display="flex"
-                    flexDirection="column"
-                >
-                    <Autocomplete
-                        freeSolo
-                        options={items.map((option) => option)}
-                        getOptionLabel={(option) => `${option.title}`}
-                        renderOption={(props, option) => {
-                            return (
-                                <li
-                                    {...props}
-                                    key={option.id}
-                                    onClick={() => {
-                                        history.push(`/details/${option.id}`);
-                                    }}
-                                >
-                                    {option.title}
-                                </li>
-                            )
-                        }}
-                        renderInput={(params) =>
-                            <TextField
-                                {...params}
+                <Autocomplete
+                    freeSolo
+                    options={items.map((option) => option)}
+                    getOptionLabel={(option) => `${option.title}`}
+                    onChange={handleSubmit}
+                    renderOption={(props, option) => {
+                        return (
+                            <li
+                                {...props}
+                                key={option.id}
+                                onClick={() => {
+                                    history.push(`/details/${option.id}`);
+                                }}
+                            >
+                                {option.title}
+                            </li>
+                        )
+                    }}
+                    renderInput={(params, option) =>
+                        <TextField
+                            {...params}
                                 variant="standard"
                                 label="Search"
                                 inputRef={query}
@@ -60,15 +58,14 @@ function Search() {
                                 }}
                             />}
                         />
-                            {/* <Button
+                            <Button
                                 variant="contained"
                                 type="submit"
                                 sx={{ width: 300 }}
                             >
                                 Search
-                            </Button> */}
+                            </Button>
                     </Box>
-                </form>
         </Box>
     )
 }
