@@ -17,7 +17,6 @@ function Search() {
         history.push(`/details/${option.id}`);
     }
 
-
     return (
         <Box
             display="flex"
@@ -56,16 +55,16 @@ function Search() {
                                     width: 300,
                                     backgroundColor: 'white'
                                 }}
-                            />}
-                        />
-                            <Button
-                                variant="contained"
-                                type="submit"
-                                sx={{ width: 300 }}
-                            >
-                                Search
-                            </Button>
-                    </Box>
+                        />}
+                    />
+                        <Button
+                            variant="contained"
+                            type="submit"
+                            sx={{ width: 300 }}
+                        >
+                            Search
+                        </Button>
+            </Box>
         </Box>
     )
 }

@@ -20,7 +20,9 @@ function ItemDetails() {
     
     
     return (
-        <>
+        <div className="details-wrapper">
+            <div className="details-one"></div>
+            <div className="details-two">
             <img
                 className="details-cover"
                 src={item.cover}
@@ -37,7 +39,8 @@ function ItemDetails() {
             <a
                 href={`mailto:${item.email_address}`}
             >📧</a>
-        </>
+            </div>
+        </div>
     )
 }
 
