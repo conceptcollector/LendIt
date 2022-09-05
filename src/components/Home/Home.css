@@ -27,14 +27,11 @@
 }
 
 .card-body {
-    display: grid;
-    grid-template-columns: auto auto;
     color: #444;
 }
 
 .home-cover {
     height: 75px;
-    margin-right: 10px;
 }
 
 .card-footer {

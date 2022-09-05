@@ -34,37 +34,21 @@ function Home() {
                                     color="#fafafa"
                                 >
                                     <center>
-                                        {item.title} - {item.author}
+                                        {item.title}
                                     </center>
                                 </Card.Header>
                                 <Card.Body
                                     className="card-body"
                                 >
-                                    {/* <center> */}
+                                    <center>
                                     <img
                                         className="home-cover"
                                         backgroundColor="#fafafa"
                                         color="#222"
                                         src={item.cover}
                                     />
-                                    {/* </center> */}
-                                    <p className="home-comments">
-                                        {item.comments}
-                                    </p>
-                                    
-                                </Card.Body>
-                                <Card.Footer className="card-footer">
-                                    <center>
-                                        <a
-                                            href={`mailto:${item.email_address}?Subject=${item.title}`}
-                                            target="_blank"
-                                        >
-                                            <EmailOutlinedIcon
-                                                color="outline"
-                                            />
-                                        </a>
                                     </center>
-                                </Card.Footer>
+                                </Card.Body>
                         </Card>
                     )})}
             </div>
