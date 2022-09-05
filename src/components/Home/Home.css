@@ -1,37 +1,47 @@
-.wrapper {
+#home-wrapper {
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
 
-.one {
+#home-one {
     display: flex;
     flex-direction: column;
 }
 
-.box {
+#home-two {
     margin-top: 0;
     flex-flow: row;
     min-width: 67vw;
 }
 
-.home-each-card {
-    display: inline-block;
-    margin-top: 0;
-    block-size: fit-content;
-    width: 50%;
+#home-items {
+    display: inline-flex;
+    flex-wrap: wrap;
 }
 
-.card-header {
+.home-each-box {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    margin-top: 0;
+    block-size: fit-content;
+    width: 20%;
+}
+
+.each-box-one {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     background-color: #6c838f;
     color: #fafafa;
 }
 
-.card-body {
+.each-box-two {
+    background-color: #fafafa;
     color: #444;
 }
 
 .home-cover {
-    height: 75px;
+    height: 11rem;
 }
 
 .card-footer {
