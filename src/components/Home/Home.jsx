@@ -1,72 +1,64 @@
 import {useEffect} from 'react';
+import { useHistory } from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 
 import Search from '../Search/Search';
 
 import './Home.css';
-import Card from 'react-bootstrap/Card';
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import { Box } from '@mui/material';
 
 function Home() {
     const dispatch = useDispatch();
     const items = useSelector((store) => store.items);
+    const history = useHistory();
 
     useEffect(() => {
         dispatch({ type: 'FETCH_RECENT_ITEMS' });
     }, []);
     
     return (
-        <div className="wrapper">
-            <div className="one">
+        <div id="home-wrapper">
+            <div id="home-one">
                 <div></div>
                 {/* <Footer /> */}
             </div>
-            <div className="box">
+            <div id="home-two">
                 <Search />
+                <Box id="home-items">
                     {items.recentItemsReducer.map((item) => {
                         return (
-                            <Card
-                                className="home-each-card"
+                            <Box
+                                className="home-each-box"
                                 key={item.id}
                             >
-                                <Card.Header
-                                    className="card-header"
+                                <div
+                                    className="each-box-one"
                                     color="#fafafa"
+                                    onClick={() => {
+                                        history.push(`/details/${item.id}`);
+                                    }}
                                 >
                                     <center>
-                                        {item.title} - {item.author}
+                                        {item.title}
                                     </center>
-                                </Card.Header>
-                                <Card.Body
-                                    className="card-body"
+                                </div>
+                                <div
+                                    className="each-box-two"
                                 >
-                                    {/* <center> */}
+                                    <center>
                                     <img
                                         className="home-cover"
-                                        backgroundColor="#fafafa"
                                         color="#222"
                                         src={item.cover}
+                                        onClick={() => {
+                                            history.push(`/details/${item.id}`);
+                                        }}
                                     />
-                                    {/* </center> */}
-                                    <p className="home-comments">
-                                        {item.comments}
-                                    </p>
-                                    
-                                </Card.Body>
-                                <Card.Footer className="card-footer">
-                                    <center>
-                                        <a
-                                            href={`mailto:${item.email_address}?Subject=${item.title}`}
-                                            target="_blank"
-                                        >
-                                            <EmailOutlinedIcon
-                                                color="outline"
-                                            />
-                                        </a>
                                     </center>
-                                </Card.Footer>
-                        </Card>
+                                </div>
+                            </Box>
                     )})}
+                </Box>
             </div>
         </div>
     )
