@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import Search from '../Search/Search';
 
 import './Home.css';
-import { Box } from '@mui/material';
+import { Box, borders } from '@mui/material';
 
 function Home() {
     const dispatch = useDispatch();
@@ -30,6 +30,7 @@ function Home() {
                             <Box
                                 className="home-each-box"
                                 key={item.id}
+                                sx= {{ border: 1 }}
                             >
                                 <div
                                     className="each-box-one"
