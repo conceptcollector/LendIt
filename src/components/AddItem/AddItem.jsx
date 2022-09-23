@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 
 import './AddItem.css';
-import {TextField, Button} from '@mui/material';
+import {Autocomplete, Button, TextField} from '@mui/material';
 
 function AddItem() {
 
@@ -32,8 +32,35 @@ function AddItem() {
         history.push('/Profile');
     }
 
+    const media = [
+        "Board Game",
+        "Film and TV",
+        "Literature",
+        "Music",
+        "Video Game"
+    ]
+
     return (
-        
+        <div id="add-item">
+            <h4>What type of media do you want to add?</h4>
+            <Autocomplete
+                freeSolo
+                options={media.map((option) => option)}
+                getOptionLabel={(option) => `${option}`}
+                renderInput={(params, option) =>
+                    <TextField
+                        {...params}
+                            variant="standard"
+                            label="Search"
+                            // inputRef={query}
+                            sx={{
+                                width: 300,
+                                backgroundColor: 'white'
+                            }}
+                    />
+                }
+            />
+        </div>
         // <div id="add-item">
         //     <div></div>
         //     <form
