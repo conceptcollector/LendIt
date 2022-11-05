@@ -7,6 +7,7 @@ import {Autocomplete, Button, TextField} from '@mui/material';
 
 function AddItem() {
 
+    const [mediaType, setMediaType] = useState('');
     const [itemTitle, setItemTitle] = useState('');
     const [itemAuthor, setItemAuthor] = useState('');
     const [itemCover, setItemCover] = useState('');
@@ -46,14 +47,16 @@ function AddItem() {
 
     return (
         <div id="add-item">
-            <h4>What type of media do you want to add?</h4>
-            <Autocomplete
-                freeSolo
-                options={media.map((option) => option)}
-                getOptionLabel={(option) => `${option}`}
-                renderInput={(params, option) =>
-                    <TextField
-                        {...params}
+            <div id="add-item-column-one"></div>
+            <div id="add-item-column-two">
+                <h4>What type of media do you want to add?</h4>
+                <Autocomplete
+                    freeSolo
+                    options={media.map((option) => option)}
+                    getOptionLabel={(option) => `${option}`}
+                    renderInput={(params, option) =>
+                        <TextField
+                            {...params}
                             variant="standard"
                             label="Search"
                             // inputRef={query}
@@ -61,9 +64,12 @@ function AddItem() {
                                 width: 300,
                                 backgroundColor: 'white'
                             }}
-                    />
-                }
-            />
+                            value={mediaType}
+                            onSubmit={(e) => setMediaType(e.target.value)}
+                        />
+                    }
+                />
+            </div>
         </div>
 
 
