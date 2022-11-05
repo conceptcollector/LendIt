@@ -17,6 +17,10 @@ function AddItem() {
 
     const dispatch = useDispatch();
 
+    // const fetchMediaAPI = (e) => {
+
+    // }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch({
@@ -61,6 +65,8 @@ function AddItem() {
                 }
             />
         </div>
+
+
         // <div id="add-item">
         //     <div></div>
         //     <form
