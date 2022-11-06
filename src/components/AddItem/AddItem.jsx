@@ -19,7 +19,11 @@ function AddItem() {
     const dispatch = useDispatch();
 
     // const fetchMediaAPI = (e) => {
-
+        // e.preventDefault();
+        // dispatch({
+        //     type: 'MEDIA_API',
+        //     payload: mediaType
+        // })
     // }
 
     const handleSubmit = (e) => {
