@@ -21,6 +21,7 @@ function AddItem() {
     // const fetchMediaAPI = (e) => {
         // e.preventDefault();
         // dispatch({
+        //     method: 'GET',
         //     type: 'MEDIA_API',
         //     payload: mediaType
         // })
