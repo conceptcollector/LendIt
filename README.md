@@ -6,8 +6,6 @@ I built this in two weeks.
 
 I've always strengthened my relationships with my friends by sharing creative works with them. "Dude, have you read this?? You have to! I'll bring it next time I see you, I want to know what you think." This is part of the goal of LendIt; to strengthen communities and maybe build even some new ones along the way.
 
-To see the fully functional site, please visit: [LendIt](https://pacific-beyond-53970.herokuapp.com/#/registration)
-
 ## Screen Shot
 
 <img width="1280" alt="LendIt-Home" src="https://user-images.githubusercontent.com/95505985/173204310-848b6037-7818-4250-b61c-3ee0dc8d6808.png">
